@@ -1,0 +1,7 @@
+@theme "/home/rom/.local/share/rofi/themes/spotlight-dark.rasi"
+
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+}
+

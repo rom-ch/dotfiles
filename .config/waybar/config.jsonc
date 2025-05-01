@@ -1,0 +1,39 @@
+{
+    // General Settings
+
+    // Position TOP
+    "layer": "top",
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,    
+    "spacing": 0,
+    "output": "DP-2",
+
+    // Load Modules
+    "include": [
+        "~/.config/waybar/waybar-quicklinks.json",
+        "~/.config/waybar/modules.json"
+    ],
+
+    // Modules Left
+    "modules-left": [
+        "hyprland/workspaces",
+        "tray"
+    ],
+
+    // Modules Center
+    "modules-center": [
+        "clock"
+    ],
+
+    // Modules Right    
+    "modules-right": [
+        "hyprland/language",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "group/hardware",
+        "custom/hypridle",
+        "custom/exit"
+    ]
+}
