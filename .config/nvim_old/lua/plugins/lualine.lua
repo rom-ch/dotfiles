@@ -40,7 +40,7 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "ayu_dark", -- Set theme based on environment variable
+				theme = "github_dark_default", -- Set theme based on environment variable
 				-- Some useful glyphs:
 				-- https://www.nerdfonts.com/cheat-sheet
 				--        

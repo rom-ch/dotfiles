@@ -1,0 +1,19 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/ayu_dark.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 8, y = 8 }
+
+[font]
+normal = { family = "MesloLGS Nerd Font Mono"}
+
+[terminal]
+shell = {program = "/bin/zsh", args = ["-l"]}
+
+[mouse]
+hide_when_typing = true
