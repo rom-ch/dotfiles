@@ -1,6 +1,7 @@
 .ssh/id_*
 .ssh/authorized_keys
-.ssh/known_hosts*
+.ssh/known_hosts
+.ssh/know_hosts.old
 .ssh/*.pub
 
 
