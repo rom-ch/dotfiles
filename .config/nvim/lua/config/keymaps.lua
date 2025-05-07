@@ -17,6 +17,9 @@ vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", opts)
 -- quit file
 -- vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", opts)
 
+-- Exit insert mode with jk
+vim.keymap.set("i", "jk", "<Esc>", { noremap = false })
+
 -- Vertical scroll and center
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)

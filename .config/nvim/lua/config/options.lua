@@ -50,7 +50,7 @@ vim.opt.scrolloff = 8
 vim.opt.updatetime = 250
 
 -- More space in the Neovim command line for displaying messages (default: 1)
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 
 -- Allow backspace on (default: 'indent,eol,start')
 vim.opt.backspace = "indent,eol,start"
