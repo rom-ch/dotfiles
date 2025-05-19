@@ -6,7 +6,6 @@
     "margin-left": 0,
     "margin-right": 0,
     "spacing": 0,
-    "height": 38,
     "output": "DP-2",
     // Load Modules
     "include": [
@@ -23,7 +22,12 @@
     ],
     // Modules Right    
     "modules-right": [
-        "group/vol-wifi-blue",
-        "group/hardware"
+        "hyprland/language",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "group/hardware",
+        "custom/hypridle",
+        "custom/exit"
     ]
 }

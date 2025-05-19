@@ -3,77 +3,146 @@
     font-family: "FiraCode Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif;
 }
 
-window#waybar{
-    background: alpha(black,.6);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-}
-tooltip {
-    background:#333;
+window#waybar {
+    /* background: #1e1e2e; */
+    background: alpha(#1e1e2e, 0.9);
+    /* box-shadow: 0px 0px 2px rgba(0, 0, 0, .6); */
 }
 
-#clock{
-    color: #fafafa;
+tooltip {
+    background: #313244;
+}
+
+#clock {
+    background-color: #313244;
+    color: #cdd6f4;
     font-weight: 500;
+    border-radius: 100px;
+    padding: 0 16px;
+    margin: 6px 0;
 }
 
 #workspaces {
-    padding: 7px 5px;
+    background-color: #313244;
+    border-radius: 100px;
+    padding: 0 16px 0 12px;
+    margin: 6px 0 6px 8px;
 }
+
 #workspaces button {
-    all:unset;
+    all: unset;
     padding: 0px 5px;
-    color: alpha(#fafafa,.5);
+    color: #cdd6f4;
     transition: all .2s ease;
 }
+
 #workspaces button:hover {
-    color:rgba(0,0,0,0);
+    color: #b4befe;
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
     transition: all 1s ease;
 }
+
 #workspaces button.active {
-    color: #fafafa;
-    border: none;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
-}
-#workspaces button.empty {
-    color: alpha(#fafafa,.5);
-    border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
-}
-#workspaces button.empty:hover {
-    color: rgba(0,0,0,0);
-    border: none;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
-    transition: all 1s ease;
-}
-#workspaces button.empty.active {
-    color: #fafafa;
+    color: #a6e3a1;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }
 
-#tray{
+/* #workspaces button.empty { */
+/*     color: alpha(#fafafa, .5); */
+/*     border: none; */
+/*     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2); */
+/* } */
+/**/
+/* #workspaces button.empty:hover { */
+/*     color: rgba(0, 0, 0, 0); */
+/*     border: none; */
+/*     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5); */
+/*     transition: all 1s ease; */
+/* } */
+/**/
+/* #workspaces button.empty.active { */
+/*     color: #fafafa; */
+/*     border: none; */
+/*     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5); */
+/* } */
+
+#tray {
     padding: 0px 5px;
-    transition: all .3s ease; 
+    transition: all .3s ease;
 
 }
+
 #tray menu * {
     padding: 0px 5px;
-    transition: all .3s ease; 
+    transition: all .3s ease;
 }
 
 #tray menu separator {
     padding: 0px 5px;
-    transition: all .3s ease; 
+    transition: all .3s ease;
 }
 
-#clock, #bluetooth, #network, #cpu, #disk, #memory, #custom-system, #custom-exit, #language, #pulseaudio{
+#hardware {
+    background-color: #313244;
+    border-radius: 100px;
+    padding: 0 16px;
+    margin: 6px 8px 6px 10px;
+}
+
+#vol-wifi-blue {
+    background-color: #313244;
+    border-radius: 100px;
+    padding: 0 16px;
+    margin: 6px 0 6px 0;
+}
+
+#pulseaudio,
+#network,
+#language,
+#cpu,
+#memory {
+    margin-right: 12px;
+}
+
+#clock,
+#bluetooth,
+#network,
+#cpu,
+#disk,
+#memory,
+#language,
+#pulseaudio {
     transition: all .3s ease;
-    padding: 0 8px;
-    color: #fafafa;
     font-size: 15px;
 }
- #custom-exit {
-    padding: 0 14px;
+
+#pulseaudio {
+    color: #89b4fa;
+}
+
+#network {
+    color: #fab387;
+}
+
+#bluetooth {
+    color: #f2cdcd;
+}
+
+#language {
+    color: #b4befe;
+    font-weight: 600;
+}
+
+#cpu {
+    color: #94e2d5;
+}
+
+#memory {
+    color: #a6e3a1;
+}
+
+#disk {
+    color: #f5e0dc;
 }

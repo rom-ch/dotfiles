@@ -3,5 +3,7 @@ use = "yazi-rs/plugins:mount"
 rev = "864a021"
 hash = "dd97eede8e20e59cd2604e8006e470e2"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "68326b4"
+hash = "2ac87e1b3a61f5887472899e86535d29"

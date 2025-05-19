@@ -4,7 +4,7 @@ import = [
 ]
 
 [colors]
-primary = { background = "#000000" }
+primary = { background = "#11111b" }
 
 [env]
 TERM = "xterm-256color"

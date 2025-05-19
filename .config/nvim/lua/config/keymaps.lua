@@ -67,3 +67,6 @@ vim.keymap.set("v", ">", ">gv", opts)
 
 -- Keep last yanked when pasting
 vim.keymap.set("v", "p", '"_dP', opts)
+
+-- Go to previous occurrence (character)
+vim.keymap.set("n", "\\", ",")

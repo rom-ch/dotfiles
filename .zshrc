@@ -11,6 +11,9 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Explicitly set TERM if not inside tmux
+[[ -z "$TMUX" ]] && export TERM="xterm-256color"
+
 # History setup
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
@@ -53,3 +56,6 @@ function y() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Load SSH key for github
+eval "$(keychain --eval id_ed25519_github)"
