@@ -1,31 +1,53 @@
-#
-# ~/.bashrc
-#
+# .bashrc
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
+# Alias
 alias vi='nvim'
 alias vim='nvim'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
 
-export EDITOR=nvim
-export PATH=$PATH:/home/rom/.local/bin
-export PATH=$PATH:/home/rom/Work/Courses/Bash-scripting/scripts
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
 
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
+
+# Yazi
 function y() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-    yazi "$@" --cwd-file="$tmp"
-    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        builtin cd -- "$cwd"
-    fi
-    rm -f -- "$tmp"
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
 }
 
-eval "$(oh-my-posh init bash --config ~/.cache/oh-my-posh/themes/custom-night-owl.omp.json)"
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Launch tmux automatically
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach-session -t main || tmux new-session -s main
+fi
+
+eval "$(oh-my-posh init bash --config /home/rom/.cache/oh-my-posh/themes/custom_catppuccin_mocha.omp.json)"
+
