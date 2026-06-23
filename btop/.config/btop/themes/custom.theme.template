@@ -1,0 +1,78 @@
+# Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg]=""
+
+# Main text color
+theme[main_fg]="$FG"
+
+# Title color for boxes
+theme[title]="$BLUE_LIGHT"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="$GREY1"
+
+# Background color of selected item in processes box
+theme[selected_bg]="$BLUE_LIGHT"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="$BLUE_DARK"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="$GREY0"
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="$PURPLE_LIGHT"
+
+# Cpu box outline color
+theme[cpu_box]="$GREY2"
+
+# Memory/disks box outline color
+theme[mem_box]="$GREY2"
+
+# Net up/down box outline color
+theme[net_box]="$GREY2"
+
+# Processes box outline color
+theme[proc_box]="$GREY2"
+
+# Box divider line and small boxes line color
+theme[div_line]="$GREY3"
+
+# Temperature graph colors
+theme[temp_start]="$GREY1"
+theme[temp_mid]="$BLUE_LIGHT"
+theme[temp_end]="RED_LIGHT"
+
+# CPU graph colors
+theme[cpu_start]="$GREY1"
+theme[cpu_mid]="$BLUE_LIGHT"
+theme[cpu_end]="RED_LIGHT"
+
+# Mem/Disk free meter
+theme[free_start]="$GREY1"
+theme[free_mid]=""
+theme[free_end]="$GREY4"
+
+# Mem/Disk cached meter
+theme[cached_start]="$PURPLE_LIGHT"
+theme[cached_mid]=""
+theme[cached_end]="$PURPLE_DARK"
+
+# Mem/Disk available meter
+theme[available_start]="$BLUE_LIGHT"
+theme[available_mid]=""
+theme[available_end]="$AQUA"
+
+# Mem/Disk used meter
+theme[used_start]="RED_LIGHT"
+theme[used_mid]=""
+theme[used_end]="$RED_DARK"
+
+# Download graph colors
+theme[download_start]="$GREY1"
+theme[download_mid]="$BLUE_LIGHT"
+theme[download_end]="$PURPLE_LIGHT"
+
+# Upload graph colors
+theme[upload_start]="$GREY1"
+theme[upload_mid]="$BLUE_LIGHT"
+theme[upload_end]="$PURPLE_LIGHT"
