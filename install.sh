@@ -8,8 +8,9 @@ run() {
   bash "scripts/$1.sh"
 }
 
-run "02-yay"
-run "03-packages"
+run 02-yay
+run 03-packages
+run 04-dotfiles
 
 echo
 echo "Setup complete"
