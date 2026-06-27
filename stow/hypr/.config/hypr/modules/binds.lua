@@ -1,10 +1,6 @@
 local terminal = "kitty"
 local fileManager = "nautilus"
 local browser = "brave"
--- local browser = "zen-browser"
--- local menu = 'rofi -show drun -theme "~/.config/rofi/launchers/type-2/style-1.rasi"'
-local menu = "~/.config/rofi/launchers/type-2/launcher.sh"
-local osdclient = "swayosd-client --monitor \"$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')\""
 
 local mainMod = "SUPER"
 
@@ -17,17 +13,12 @@ hl.bind(mainMod .. " + W", hl.dsp.window.close(), { description = "Close Window"
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager), { description = "Open File Manager" })
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser), { description = "Open Browser" })
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(terminal .. " nvim"), { description = "Open nvim" })
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("pkill rofi || " .. menu), { description = "Open App Menu" })
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("qs ipc call launcher toggle"))
 hl.bind(
 	mainMod .. " + SHIFT + B",
 	hl.dsp.exec_cmd(browser .. " --incognito"),
 	{ description = "Open Browser Incognito" }
 )
--- hl.bind(
--- 	mainMod .. " + SHIFT + B",
--- 	hl.dsp.exec_cmd(browser .. " --private-window"),
--- 	{ description = "Open Browser Incognito" }
--- )
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd(terminal .. " btop"), { description = "Open btop" })
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("gnome-calculator"), { description = "Open Calculator" })
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"), { description = "Lock Session" })
@@ -38,15 +29,11 @@ hl.bind(
 	{ description = "Open Clipboard" }
 )
 hl.bind(
-	mainMod .. " + ESCAPE",
-	hl.dsp.exec_cmd("~/.config/hypr/scripts/wlogout.sh"),
-	{ description = "Open Logout Menu" }
-)
-hl.bind(
 	mainMod .. " + PRINT",
 	hl.dsp.exec_cmd("pkill hyprpicker || hyprpicker -a"),
 	{ description = "Open Color Picker" }
 )
+hl.bind(mainMod .. " + CTRL + SPACE", hl.dsp.exec_cmd("qs ipc call wallpaper toggle"))
 hl.bind(
 	"PRINT",
 	hl.dsp.exec_cmd("grim ~/Pictures/Screenshots/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"),
@@ -101,39 +88,34 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- # Laptop multimedia keys for volume and LCD brightness (with OSD)
-hl.bind(
-	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd(osdclient .. " --output-volume raise"),
-	{ locked = true, repeating = true, description = "Volume Up" }
-)
-hl.bind(
-	"XF86AudioLowerVolume",
-	hl.dsp.exec_cmd(osdclient .. " --output-volume lower"),
-	{ locked = true, repeating = true, description = "Volume Down" }
-)
+
+local function vol(args)
+	return hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ " .. args)
+end
+
+hl.bind("XF86AudioRaiseVolume", vol("3%+"), { locked = true, repeating = true, description = "Volume Up" })
+hl.bind("XF86AudioLowerVolume", vol("3%-"), { locked = true, repeating = true, description = "Volume Down" })
 hl.bind(
 	"XF86AudioMute",
-	hl.dsp.exec_cmd(osdclient .. " --output-volume mute-toggle"),
-	{ locked = true, repeating = true, description = "Mute" }
-)
-hl.bind(
-	"XF86AudioMicMute",
-	hl.dsp.exec_cmd(osdclient .. " --input-volume mute-toggle"),
-	{ locked = true, repeating = true, description = "Mute Microphone" }
-)
-hl.bind(
-	"XF86MonBrightnessUp",
-	hl.dsp.exec_cmd(osdclient .. " --brightness raise"),
-	{ locked = true, repeating = true, description = "Brightness Up" }
-)
-hl.bind(
-	"XF86MonBrightnessDown",
-	hl.dsp.exec_cmd(osdclient .. " --brightness lower"),
-	{ locked = true, repeating = true, description = "Brightness Down" }
+	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+	{ locked = true, description = "Mute Toggle" }
 )
 
--- Requires playerctl
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd(osdclient .. " + playerctl next"), { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd(osdclient .. " + playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(osdclient .. " + playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(osdclient .. " + playerctl previous"), { locked = true })
+local function bri(args)
+	return hl.dsp.exec_cmd("brightnessctl set " .. args)
+end
+
+hl.bind("XF86MonBrightnessUp", bri("5%+"), { locked = true, repeating = true, description = "Brightness Up" })
+hl.bind("XF86MonBrightnessDown", bri("5%-"), { locked = true, repeating = true, description = "Brightness Down" })
+
+-- # Log bindings
+hl.bind(mainMod .. " + ESCAPE + L", hl.dsp.exec_cmd("loginctl lock-session"), { description = "Lock Session" })
+hl.bind(
+	mainMod .. " + ESCAPE + E",
+	hl.dsp.exec_cmd("loginctl kill-session $XDG_SESSION_ID"),
+	{ description = "Logout" }
+)
+hl.bind(mainMod .. " + ESCAPE + U", hl.dsp.exec_cmd("systemctl suspend"), { description = "Suspend" })
+hl.bind(mainMod .. " + ESCAPE + H", hl.dsp.exec_cmd("systemctl hibernate"), { description = "Hibernate" })
+hl.bind(mainMod .. " + ESCAPE + S", hl.dsp.exec_cmd("systemctl poweroff"), { description = "Power Off" })
+hl.bind(mainMod .. " + ESCAPE + R", hl.dsp.exec_cmd("systemctl reboot"), { description = "Reboot" })

@@ -1,26 +1,18 @@
+//@ pragma UseQApplication
+
 import Quickshell
+import Quickshell.Io
 import QtQuick
-import "components"
+import "appLauncher"
+import "bar"
+import "wallpaper"
+import "osd"
+import "notifications"
 
-ShellRoot {
-    Variants {
-        model: Quickshell.screens
-
-        Bar {
-            height: 38
-            anchor: Edges.Top
-
-            left: [
-                Workspaces {}
-            ]
-
-            center: [
-                ClockWidget {}
-            ]
-            
-            right: [
-                Network {}
-            ]
-        }
-    }
+Scope {
+  Bar {}
+  AppLauncher {}
+  WallpaperManager {}
+  OSD {}
+  NotificationPopup {}
 }

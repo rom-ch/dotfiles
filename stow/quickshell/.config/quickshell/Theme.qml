@@ -16,7 +16,7 @@ Singleton {
 
     // Fonts
     property string fontSans: "Adwaita Sans"
-    property string fontMono: "JetBrainsMono Nerd Font"
+    property string fontMono: "HackMono Nerd Font"
 
     FileView {
         id: themeFile

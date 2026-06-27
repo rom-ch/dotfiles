@@ -1,3 +1,4 @@
+awww
 base
 base-devel
 bluetui
@@ -22,11 +23,10 @@ grub
 hypridle
 hyprland
 hyprlock
-hyprpaper
 hyprpicker
-impala
 inter-font
-iwd
+networkmanager
+brightnessctl
 jq
 kitty
 less
@@ -53,12 +53,10 @@ qt5-wayland
 qt6-wayland
 quickshell
 ripgrep
-rofi
 rsync
 slurp
 stow
 sudo
-swayosd
 tmux
 tree
 ttf-cascadia-mono-nerd
@@ -69,7 +67,6 @@ ufw
 unrar
 unzip
 uv
-waybar
 wget
 wiremix
 wireplumber

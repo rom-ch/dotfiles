@@ -5,5 +5,4 @@ luarocks-git
 nordvpn-bin
 qimgv-git
 tree-sitter-cli-git
-ttf-geist-mono
 wlogout

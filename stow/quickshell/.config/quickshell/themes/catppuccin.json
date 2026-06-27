@@ -1,12 +1,17 @@
 {
-	"base": "#24273a",
-	"accent": "#8aadf4",
-	"dark": "#181926",
-	"light": "#6e738d",
-	"mid": "#363a4f",
-	"text": "#cad3f5",
-	"text_inactive": "#a5adcb",
-	"danger": "#e64553",
-	"warning": "#fe640b",
-	"success": "#40a02b"
+    "name": "Mocha",
+    "family": "Catppuccin",
+    "bgBase": "#1e1e2e",
+    "bgSurface": "#313244",
+    "bgHover": "#272839",
+    "bgSelected": "#45475a",
+    "bgBorder": "#585b70",
+    "textPrimary": "#cdd6f4",
+    "textSecondary": "#bac2de",
+    "textMuted": "#a6adc8",
+    "accentPrimary": "#89b4fa",
+    "accentCyan": "#74c7ec",
+    "accentGreen": "#a6e3a1",
+    "accentOrange": "#fab387",
+    "accentRed": "#f38ba8"
 }
