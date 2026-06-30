@@ -1,13 +1,9 @@
 awww
-base
-base-devel
 bluetui
 bluez
 bluez-utils
 btop
 cliphist
-efibootmgr
-egl-wayland
 evince
 exfat-utils
 eza
@@ -15,9 +11,7 @@ fastfetch
 fd
 flatpak
 fzf
-git
 gnome-calculator
-gnome-disk-utility
 grim
 grub
 hypridle
@@ -34,7 +28,6 @@ linux
 linux-firmware
 linux-headers
 lua-language-server
-mako
 man-db
 man-pages
 mpv
@@ -43,8 +36,6 @@ neovim
 noto-fonts
 noto-fonts-emoji
 ntfs-3g
-nvidia-open-dkms
-nvidia-utils
 nwg-look
 os-prober
 pipewire
@@ -73,7 +64,6 @@ wireplumber
 woff2-font-awesome
 xdg-desktop-portal-hyprland
 yazi
-zram-generator
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting

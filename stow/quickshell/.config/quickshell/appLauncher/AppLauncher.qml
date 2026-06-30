@@ -105,7 +105,7 @@ Scope {
         // Header
         Text {
           text: "  Applications"
-          color: root.theme.accentPrimary
+          color: root.theme.accentGreen
           font.pixelSize: 14
           font.family: root.font
           font.bold: true
@@ -117,7 +117,7 @@ Scope {
           height: 44
           radius: 10
           color: root.theme.bgSurface
-          border.color: searchInput.activeFocus ? root.theme.accentPrimary : root.theme.bgBorder
+          border.color: searchInput.activeFocus ? root.theme.accentGreen : root.theme.bgBorder
           border.width: 1
 
           Behavior on border.color {
@@ -218,7 +218,7 @@ Scope {
               width: 3
               height: 24
               radius: 2
-              color: root.theme.accentPrimary
+              color: root.theme.accentGreen
               anchors.left: parent.left
               anchors.leftMargin: 2
               anchors.verticalCenter: parent.verticalCenter
@@ -260,7 +260,7 @@ Scope {
                 Text {
                   anchors.centerIn: parent
                   text: ""
-                  color: root.theme.accentPrimary
+                  color: root.theme.accentGreen
                   font.pixelSize: 20
                   font.family: root.font
                   visible: (delegateRoot.modelData.icon ?? "") === ""

@@ -92,7 +92,7 @@ Scope {
 
           Text {
             text: "󰸉  Wallpaper"
-            color: root.theme.accentPrimary
+            color: root.theme.accentGreen
             font.pixelSize: 14
             font.family: root.font
             font.bold: true
@@ -140,7 +140,7 @@ Scope {
           height: 36
           radius: 8
           color: root.theme.bgSurface
-          border.color: searchInput.activeFocus ? root.theme.accentPrimary : root.theme.bgBorder
+          border.color: searchInput.activeFocus ? root.theme.accentGreen : root.theme.bgBorder
           border.width: 1
 
           RowLayout {
@@ -215,7 +215,7 @@ Scope {
               anchors.margins: 4
               radius: 8
               color: root.theme.bgSurface
-              border.color: WallpaperService.currentWallpaper === modelData ? root.theme.accentPrimary : (imgHover.containsMouse ? root.theme.bgBorder : "transparent")
+              border.color: WallpaperService.currentWallpaper === modelData ? root.theme.accentGreen : (imgHover.containsMouse ? root.theme.bgBorder : "transparent")
               border.width: WallpaperService.currentWallpaper === modelData ? 2 : 1
               clip: true
 
@@ -373,7 +373,7 @@ Scope {
         width: applyRow.width + 32
         height: 40
         radius: 20
-        color: root.theme.accentPrimary
+        color: root.theme.accentGreen
         Accessible.role: Accessible.Button
         Accessible.name: "Apply wallpaper"
 

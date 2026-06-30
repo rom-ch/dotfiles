@@ -38,7 +38,7 @@ Row {
       property var ws: Hyprland.workspaces.values.find(w => w.id === index + 1)
       property bool isActive: Hyprland.focusedWorkspace?.id === (index + 1) 
       active: isActive
-      color: ws ? root.theme.accentPrimary : root.theme.textMuted
+      color: ws ? root.theme.textPrimary : root.theme.textMuted
     }
   }
 }

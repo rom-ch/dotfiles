@@ -176,7 +176,7 @@ Scope {
                 anchors.margins: 2
                 height: Math.max(0, (parent.height - 4) * Math.max(0, Math.min(1, root.volumeMuted ? 0 : root.volumeValue)))
                 radius: 3
-                color: root.volumeMuted ? root.theme.textMuted : root.theme.accentPrimary
+                color: root.volumeMuted ? root.theme.textMuted : root.theme.accentGreen
 
                 Behavior on height { NumberAnimation { duration: 100; easing.type: Easing.OutCubic } }
               }
@@ -189,7 +189,7 @@ Scope {
                 if (root.volumeValue < 0.66) return "󰖀";
                 return "󰕾";
               }
-              color: root.volumeMuted ? root.theme.textMuted : root.theme.accentPrimary
+              color: root.volumeMuted ? root.theme.textMuted : root.theme.accentGreen
               font.pixelSize: 15
               font.family: root.font
               Layout.alignment: Qt.AlignHCenter
